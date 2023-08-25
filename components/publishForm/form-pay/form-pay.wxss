@@ -1,0 +1,79 @@
+/* components/publishForm/form-pay/form-pay.wxss */
+.form-pay {
+  width: 100%;
+}
+.label {
+  font-family: 'PingFang SC-Regular';
+  font-size: 32rpx;
+  /* color: #222222; */
+  color: #666;
+  line-height: 44rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.isrequired {
+  color: #f94b30;
+}
+.switch {
+  width: 196rpx;
+  height: 60rpx;
+  box-sizing: border-box;
+  border-radius: 30rpx;
+  background-color: #f3f3f3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.switch .options {
+  width: 98rpx;
+  height: 44rpx;
+  text-align: center;
+  border-radius: 22rpx;
+  color: #999999;
+  font-size: 28rpx;
+}
+.switch .options-0 {
+  margin-left: 8rpx;
+}
+.switch .options-1 {
+  margin-right: 8rpx;
+}
+.switch .switch-on {
+  background-color: #3a71ff;
+  color: #fff;
+}
+
+.content {
+  margin-top: 20rpx;
+  /* height: 56rpx; */
+  display: flex;
+  justify-content: space-between;
+}
+.content .input {
+  flex: 1 1 auto;
+  padding-bottom: 24rpx;
+  color: #333;
+}
+.wages {
+  flex: 1 1 auto;
+  /* padding-bottom: 12rpx; */
+  border-bottom: 2rpx solid #EDEDED;
+  display: flex;
+  justify-content: space-between;
+}
+.slash {
+  color: #B2BAC6;
+}
+.unit {
+  width: 226rpx;
+  /* padding-bottom: 12rpx; */
+  border-bottom: 2rpx solid #EDEDED;
+}
+
+.warn {
+  color: #f94b30;
+  font-size: 24rpx;
+  height: 28rpx;
+}

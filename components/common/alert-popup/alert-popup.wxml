@@ -1,0 +1,11 @@
+<!--components/common/alert-popup/alert-popup.wxml-->
+<van-popup show="{{ isShow }}" bind:close="onClose" z-index="999999" custom-style="border-radius: 19rpx;">
+  <view class="alert-popup" close-on-click-overlay="{{ false }}">
+    <view class="popup__title">{{ popupData.title }}</view>
+    <view class="popup__content">{{ popupData.content }}</view>
+    <view class="popup__handle">
+      <view class="handle__cancel" bind:tap="onCancel">{{ popupData.cancel }}</view>
+      <view class="handle__confirm" bind:tap="onConfirm">{{ popupData.confirm }}</view>
+    </view>
+  </view>
+</van-popup>

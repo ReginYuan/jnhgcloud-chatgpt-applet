@@ -1,0 +1,45 @@
+/* components/common/van-popup/index.wxss */
+van-popup {
+  position: fixed;
+  bottom: 0rpx;
+  z-index: 999999 !important;
+  padding-bottom: 20rpx !important;
+}
+
+.clearCache {
+  display: flex;
+  flex-direction: column;
+  margin: 20rpx auto;
+}
+
+.clearCache-title {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-left: 0 !important;
+  height: 20%;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 42.19rpx;
+}
+
+.clearCache-title-image {
+  width: 46rpx;
+  height:46rpx;
+}
+
+.clearCache-content {
+  flex: auto;
+  margin: 30rpx 30rpx 40rpx 30rpx;
+  font-size: 32rpx;
+  font-family: 'PingFang SC-Semibold, PingFang SC';
+  font-weight: 600;
+  color: #1A1A18 !important;
+}
+
+.clearCache-btn {
+  display: flex;
+  flex-direction: row;
+  height: 40%;
+  justify-content: space-around;
+}

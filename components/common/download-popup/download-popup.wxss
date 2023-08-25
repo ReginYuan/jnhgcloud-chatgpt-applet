@@ -1,0 +1,56 @@
+/* components/common/download-popup/download-popup.wxss */
+.download {
+  width: 100%;
+}
+
+.download-content {
+  width: 640rpx;
+  background: linear-gradient(180deg, #f2f8ff 0%, #ffffff 100%);
+  font-family: 'STXingkai-Regular', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content__logo {
+  margin: 0 auto;
+  width: 176rpx;
+  height: 150rpx;
+}
+.content__logo .content__logo__img {
+  position: relative;
+  top: 92rpx;
+  z-index: 1;
+}
+
+.content__download {
+  width: 100%;
+}
+
+.install {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+}
+
+.install-button {
+  width: 544rpx;
+  height: 104rpx;
+  border-radius: 20rpx;
+  background: #3a71ff;
+  font-size: 36rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 104rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tip {
+  margin: 32rpx 0 22rpx;
+  text-align: center;
+  font-size: 24rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+  line-height: 40rpx;
+}

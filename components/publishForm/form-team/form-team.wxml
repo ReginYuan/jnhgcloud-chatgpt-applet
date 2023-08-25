@@ -1,0 +1,18 @@
+<!--components/publishForm/form-team/form-team.wxml-->
+<view class="form-team">
+  <view class="label">
+    <view>
+      <text class="name">{{label}}</text>
+      <text class="isrequired" wx:if="{{require}}">*</text>
+    </view>
+    <view class="right">
+      <form-radio label="是" value="{{value}}" color="#3A71FF" size="28rpx" bindtap="onChange" ></form-radio>
+      <form-radio label="否" value="{{value}}" color="#3A71FF" size="28rpx" bindtap="onChange" defineChecked="{{0}}" defineNoChecked="{{1}}"></form-radio>
+    </view>
+  </view>
+  <view class="content">
+  </view>
+  <view class="warn">
+    <text>{{warn}}</text>
+  </view>
+</view>

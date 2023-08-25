@@ -1,0 +1,24 @@
+<!--components/common/common-publish/common-publish.wxml-->
+<view
+  class="common-publish"
+  style="bottom: calc({{ tabBarHeight }}px + 40rpx);"
+>
+  <view class="publish__find find__worker" bind:tap="onFindWork">
+    <image
+      src="https://image.zhushuhebao.com/jnhgcloud-worker-applet/icon/find-worker.png"
+      mode="aspectFill"
+      class="find__icon"
+    />
+    <view class="worker__text">发布招工</view>
+  </view>
+  <view class="publish__find find__job" bind:tap="onFindJob">
+    <image
+      src="https://image.zhushuhebao.com/jnhgcloud-worker-applet/icon/find-job.png"
+      mode="aspectFill"
+      class="find__icon"
+    />
+    <view class="worker__text">发布找活</view>
+  </view>
+  <view class="mask__wrap"></view>
+  <view class="mask"></view>
+</view>

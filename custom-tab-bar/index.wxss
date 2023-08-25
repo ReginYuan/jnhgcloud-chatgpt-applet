@@ -1,0 +1,33 @@
+/* tabbar包裹层 */
+van-tabbar > view {
+  box-sizing: border-box;
+  padding-top: 14rpx;
+  background-color: #fff;
+  box-shadow: 0rpx -8rpx 40rpx 0rpx rgba(26, 28, 31, 0.1);
+}
+
+.tabbar__item {
+  font-size: 24rpx;
+  font-family: PingFang SC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #999999;
+  position: relative;
+}
+
+.tabbar__icon {
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.message-news{
+  position: absolute;
+  top: 0;
+  min-width: 28rpx;
+  height: 28rpx;
+  border-radius: 14rpx;
+  background: #f04134;
+  color: #fff;
+  line-height: 28rpx;
+  font-size: 24rpx;
+  text-align: center;
+}

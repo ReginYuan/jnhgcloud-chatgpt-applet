@@ -1,0 +1,50 @@
+/* components/common/alert-popup/alert-popup.wxss */
+.alert-popup {
+  width: 640rpx;
+  /* height: 428rpx; */
+  background: #ffffff;
+}
+
+.popup__title {
+  padding: 64rpx 48rpx 32rpx;
+  font-size: 36rpx;
+  font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+  font-weight: 400;
+  color: #222222;
+  text-align: center;
+}
+
+.popup__content {
+  padding: 0 48rpx 64rpx;
+  font-size: 32rpx;
+  font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+  font-weight: 400;
+  color: #888888;
+  line-height: 48rpx;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.popup__handle {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.handle__cancel,
+.handle__confirm {
+  width: 288rpx;
+  padding: 32rpx 8rpx;
+  font-size: 34rpx;
+  font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+  font-weight: 400;
+  color: #888888;
+  text-align: center;
+}
+
+.handle__cancel {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.handle__confirm {
+  color: #222222;
+}

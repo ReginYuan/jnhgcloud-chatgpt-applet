@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "form-radio": "../form-radio/form-radio"
+  }
+}

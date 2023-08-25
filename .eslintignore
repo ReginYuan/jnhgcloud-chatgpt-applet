@@ -1,0 +1,4 @@
+**/.husky/
+**/miniprogram_npm/
+**/node_modules/
+**/load-vant.js

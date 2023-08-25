@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "authorization-popup": "../authorization-popup/authorization-popup",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-button": "@vant/weapp/button/index"
+  }
+}

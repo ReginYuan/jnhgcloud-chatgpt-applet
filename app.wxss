@@ -1,0 +1,13 @@
+/**app.wxss**/
+button {
+  background-color: #fff;
+  border: none;
+  outline: none;
+}
+button::after {
+  border: none;
+}
+
+:root {
+  --tabbar-height: 128rpx !important;
+}

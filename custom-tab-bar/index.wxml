@@ -1,0 +1,15 @@
+<view class="tab-bar">
+  <!-- 自定义tabbar -->
+  <van-tabbar class="tabbar__list" active-color="#101010" inactive-color="#999999" safe-area-inset-bottom="true" active="{{ active }}" bind:change="onChange">
+    <van-tabbar-item wx:for="{{ list }}" wx:key="index" class="tabbar__item">
+      <image slot="icon" src="{{ item.iconPath }}" mode="aspectFill" class="tabbar__icon" webp />
+      <image slot="icon-active" src="{{ item.selectedIconPath }}" class="tabbar__icon" mode="aspectFill" />
+      <text>{{ item.text }}</text>
+      <view class="message-news" wx:if="{{item.pagePath === '/pages/message/message'&&unReadMessageNum > 0}}">
+        {{unReadMessageNum}}
+      </view>
+    </van-tabbar-item>
+  </van-tabbar>
+  <!-- 登录授权 -->
+  <my-van-popupp id="popup"></my-van-popupp>
+</view>

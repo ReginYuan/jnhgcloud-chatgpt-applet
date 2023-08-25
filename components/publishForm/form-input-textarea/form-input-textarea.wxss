@@ -1,0 +1,50 @@
+/* components/publishForm/form-input-textarea/form-input-textarea.wxss */
+.form-input-textarea {
+  width: 100%;
+}
+.label {
+  font-family: 'PingFang SC-Regular';
+  font-size: 32rpx;
+  /* color: #222222; */
+  color: #666;
+  line-height: 44rpx;
+}
+
+.isrequired {
+  color: #f94b30;
+}
+
+.content {
+  position: relative;
+  margin-top: 20rpx;
+  padding: 24rpx;
+  border: 2rpx solid #e6e6e8;
+  display: flex;
+  justify-content: space-between;
+}
+.content .textarea {
+  flex: 1 1 auto;
+  font-size: 32rpx;
+  min-height: 202rpx;
+  overflow: visible;
+}
+.content .placeholder {
+  color: #999;
+  font-size: 32rpx;
+  white-space: pre-wrap;
+  word-wrap: keep-all;
+  word-break:keep-all;
+}
+.content .count{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 24rpx;
+  color: #b2bac6;
+}
+
+.warn {
+  color: #f94b30;
+  font-size: 24rpx;
+  height: 28rpx;
+}

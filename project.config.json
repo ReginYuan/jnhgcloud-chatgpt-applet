@@ -1,0 +1,160 @@
+{
+  "description": "项目配置文件",
+  "setting": {
+    "bundle": false,
+    "userConfirmedBundleSwitch": false,
+    "urlCheck": true,
+    "scopeDataCheck": false,
+    "coverView": true,
+    "es6": true,
+    "postcss": true,
+    "compileHotReLoad": false,
+    "lazyloadPlaceholderEnable": false,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "autoAudits": false,
+    "newFeature": false,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": true,
+    "useIsolateContext": true,
+    "nodeModules": false,
+    "enhance": true,
+    "useMultiFrameRuntime": true,
+    "showShadowRootInWxmlPanel": true,
+    "packNpmManually": true,
+    "enableEngineNative": false,
+    "packNpmRelationList": [
+      {
+        "packageJsonPath": "./package.json",
+        "miniprogramNpmDistDir": "./"
+      }
+    ],
+    "minifyWXSS": true,
+    "showES6CompileOption": false,
+    "minifyWXML": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "ignoreUploadUnusedFiles": false,
+    "condition": true
+  },
+  "compileType": "miniprogram",
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "招工信息",
+          "pathName": "pages/jobs/jobs",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "工友圈",
+          "pathName": "pages/workers/workers",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "地图找活",
+          "pathName": "pages/jobs-by-map/jobs-by-map",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "招工详细（带参）",
+          "pathName": "pages/jobs-detail/jobs-detail",
+          "query": "recruitId=1657929303025881090",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "工人详情（带参）",
+          "pathName": "pages/workers-detail/workers-detail",
+          "query": "id=1649970029427445762",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的-招工管理",
+          "pathName": "pages/mine-jobs/mine-jobs",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的-好活收藏",
+          "pathName": "pages/mine-job-collect/mine-job-collect",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的-找活名片",
+          "pathName": "pages/mine-worker/mine-worker",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的-好工收藏",
+          "pathName": "pages/mine-worker-collect/mine-worker-collect",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  },
+  "simulatorPluginLibVersion": {},
+  "testRoot": "minitest/",
+  "packOptions": {
+    "ignore": [
+      {
+        "value": "/minitest",
+        "type": "folder"
+      },
+      {
+        "value": "package-lock.json",
+        "type": "file"
+      },
+      {
+        "value": "commitlint.config.js",
+        "type": "file"
+      },
+      {
+        "value": ".prettierrc.js",
+        "type": "file"
+      },
+      {
+        "value": "lint-staged.config.js",
+        "type": "file"
+      },
+      {
+        "value": "load-vant.js",
+        "type": "file"
+      },
+      {
+        "value": ".eslintrc.js",
+        "type": "file"
+      }
+    ],
+    "include": []
+  },
+  "appid": "wxdb439496275fe46a"
+}

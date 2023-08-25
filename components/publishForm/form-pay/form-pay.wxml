@@ -1,0 +1,50 @@
+<!--components/publishForm/form-pay/form-pay.wxml-->
+<view class="form-pay">
+  <view class="label">
+    <view class="left">
+      <text class="name">{{label}}</text>
+      <text class="isrequired" wx:if="{{require}}">*</text>
+    </view>
+    <view class="right">
+      <view class="switch">
+        <view class="options options-{{index}} {{value.payMethod == index+1?'switch-on':''}}" wx:for="{{payMethod}}" wx:key="index" bindtap="handlerPayMethod" data-item="{{item}}">
+          {{item.label}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="wages">
+      <input
+        class="input"
+        name="{{name}}"
+        value="{{value.expectedWages}}"
+        type="digit"
+        bindinput="onChange"
+        placeholder="{{placeholder}}"
+        placeholder-style="color:#999;"
+        bindblur="onBlur"
+      />
+      <text style="color: #999999">元</text>
+    </view>
+    <view class="slash">
+      <text decode="true">&nbsp;&nbsp;/&nbsp;&nbsp;</text>
+    </view>
+    <view class="unit">
+      <input
+        class="input"
+        name="{{name}}"
+        value="{{value.unit}}"
+        type="text"
+        bindinput="onChange1"
+        placeholder="{{placeholder1}}"
+        placeholder-style="color:#999;"
+        disabled="{{disabled}}"
+        bindblur="onBlur1"
+      />
+    </view>
+  </view>
+  <view class="warn">
+    <text>{{warn}}</text>
+  </view>
+</view>

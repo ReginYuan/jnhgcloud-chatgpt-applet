@@ -1,0 +1,197 @@
+{
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "工单平台",
+          "pathName": "pages/works-order/works-order",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "招工信息",
+          "pathName": "pages/jobs/jobs",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "工友圈",
+          "pathName": "pages/workers/workers",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "地图找活",
+          "pathName": "pages/jobs-by-map/jobs-by-map",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "招工详细（带参）",
+          "pathName": "pages/jobs-detail/jobs-detail",
+          "query": "recruitId=1657929303025881090",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "工人详情（带参）",
+          "pathName": "pages/workers-detail/workers-detail",
+          "query": "id= 1659111045543759873",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的-招工管理",
+          "pathName": "pages/mine-jobs/mine-jobs",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的-好活收藏",
+          "pathName": "pages/mine-job-collect/mine-job-collect",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的-找活名片",
+          "pathName": "pages/mine-worker/mine-worker",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的-好工收藏",
+          "pathName": "pages/mine-worker-collect/mine-worker-collect",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/mine-jobs/mine-jobs",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "工单平台",
+          "pathName": "pages/works-order/works-order",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "月收入明细",
+          "pathName": "pages/income-details/income-details",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "工单详情",
+          "pathName": "pages/works-order-detail/works-order-detail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "打卡",
+          "pathName": "pages/workers-clock-in/workers-clock-in",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "记工记账-列表",
+          "pathName": "modules-records/pages/records-works/records-works",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "招工发布",
+          "pathName": "pages/publish-recruit/publish-recruit",
+          "query": "recruitId=1663058890325966850&pageCome=mine",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "通讯录",
+          "pathName": "modules-records/pages/records-address-book/records-address-book",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "记账明细",
+          "pathName": "modules-records/pages/records-account-revenue-details/records-account-revenue-details",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "记工详情",
+          "pathName": "modules-records/pages/records-work-detail/records-work-detail",
+          "query": "workRecordId=1663835748374093826&pageForm=orderList",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "记工记账",
+          "pathName": "modules-records/pages/records/records",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "系统设置",
+          "pathName": "pages/mine-set/mine-set",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "班组统计",
+          "pathName": "modules-records/pages/records-work-statistics/records-work-statistics",
+          "query": "rid=1676877743048818690",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "个人统计列表",
+          "pathName": "modules-records/pages/meritorious-accounting-statistics/meritorious-accounting-statistics",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "projectname": "jnhgcloud-chatgpt-applet",
+  "setting": {
+    "urlCheck": false,
+    "compileHotReLoad": true
+  },
+  "libVersion": "2.24.7"
+}

@@ -1,0 +1,6 @@
+<view class="list__empty">
+  <image
+    class="list__empty__img"
+    src="https://image.zhushuhebao.com/jnhgcloud-worker-applet/image/empty.png"
+    mode="aspectFill"
+/></view>

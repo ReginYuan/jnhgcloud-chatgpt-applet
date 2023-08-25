@@ -1,0 +1,37 @@
+/* components/publishForm/form-radio/form-radio.wxss */
+.form-radio {
+  width: 100%;
+}
+.label {
+  margin-left: 16rpx;
+  font-size: 32rpx;
+}
+.content{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.radio {
+  position: relative;
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  border: 2rpx solid #ccd1de;
+}
+.radio-checked::before {
+  font: normal normal normal 14px/1 'weui';
+  content: '\EA08';
+  color: #ffffff;
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -48%) scale(0.73);
+  -webkit-transform: translate(-50%, -48%) scale(0.73);
+}
+
+.warn {
+  color: #f94b30;
+  font-size: 24rpx;
+  height: 28rpx;
+}

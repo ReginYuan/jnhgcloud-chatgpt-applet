@@ -1,0 +1,18 @@
+<!--components/common/van-popup/index.wxml-->
+<van-popup show="{{ isShow }}" round position="bottom" safe-area-inset-bottom="true" custom-style="height: 25%;" bind:close="onClose">
+  <view class="clearCache">
+  <view class="clearCache-title">
+    <image class="clearCache-title-image" src="https://image.zhushuhebao.com/jnhgcloud-worker-applet/icon/icon-phone-write.png" mode="widthFix"/>
+  </view>
+
+    <text class="clearCache-content">对不起，因您手机号未授权，暂时无法使用此功能，请授权手机号</text>
+    <view class="clearCache-btn">
+      <van-button custom-style="width:200rpx;border:none;color:#999999" size="normal" class="clearCache-cancel" bindtap="onCancel">取消</van-button>
+      <van-button custom-style="width:200rpx;border:none;color:#1353DC" size="normal" class="clearCache-ok" bindtap="onConfirm"  open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">授权</van-button>
+    </view>
+  </view>
+</van-popup>
+
+<!-- 授权弹窗 -->
+<authorization-popup model:show="{{authorizationShow}}" bind:handlerAutnoeization="handlerAutnoeization"></authorization-popup>
+

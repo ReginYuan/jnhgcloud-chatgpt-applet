@@ -1,0 +1,52 @@
+/* components/publishForm/form-job-level/form-job-level.wxss */
+/* components/publishForm/input/input.wxss */
+.form-job-level {
+  width: 100%;
+}
+.label {
+  font-family: 'PingFang SC-Regular';
+  font-size: 32rpx;
+  /* color: #222222; */
+  color: #666;
+  line-height: 44rpx;
+}
+
+.isrequired {
+  color: #f94b30;
+}
+
+.content {
+  margin-top: 20rpx;
+  /* padding: 4rpx 0; */
+  padding-bottom: 24rpx;
+  border-bottom: 2rpx solid #EDEDED;
+  display: flex;
+  justify-content: space-between;
+}
+.content .opt{
+  width: 200rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  color: #B2BAC6;
+  box-sizing: border-box;
+  box-shadow: 0 0 8rpx 0 rgba(0, 0, 0, 0.1);
+}
+.content .check-opt{
+  color: #3A71FF;
+  border: 2rpx solid #3A71FF;
+}
+.options{
+  position: relative;
+}
+.img{
+  position: absolute;
+  right: 0;
+  width: 36rpx;
+  height: 32rpx;
+}
+
+.warn {
+  color: #f94b30;
+  font-size: 24rpx;
+  height: 28rpx;
+}

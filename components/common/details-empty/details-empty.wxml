@@ -1,0 +1,9 @@
+<!-- 缺省图 -->
+<view class="details__empty">
+  <image
+    class="details__empty_img"
+    src="https://image.zhushuhebao.com/jnhgcloud-worker-applet/icon/income-details-empty.png"
+    mode="aspectFill"
+  />
+  <text class="details__empty__text">暂无更多记录~</text>
+</view>

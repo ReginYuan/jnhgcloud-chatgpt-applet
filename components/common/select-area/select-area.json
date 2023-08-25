@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "alert-popup": "../../../components/common/alert-popup/alert-popup",
+    "custom-nav": "../../../components/common/custom-nav/custom-nav"
+  }
+}
