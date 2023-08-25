@@ -1,10 +1,7 @@
 import { xcxLogin, wxLogout } from "../api/index/index";
-import { getHuanXin } from "../api/message/index";
 import { getPhone } from "../api/common/common";
-import { getCurrentUser } from "../api/mine/index";
 
 import wxLogs from "../utils/logs";
-let WebIM = require("./webIM")["default"];
 // eslint-disable-next-line no-unused-vars
 let __test_account__;
 // eslint-disable-next-line no-unused-vars
@@ -346,58 +343,6 @@ const distanceUnit = (data) => {
   return res;
 };
 
-//校验环信登录
-const checkHuanXin = () => {
-  return wx.getStorageSync("huanXinToken");
-};
-
-/*环信登录*/
-const loginHuanXin = async () => {
-  const res = await getHuanXin();
-  if (res && res.data) {
-    const imUsername = res.data.imUsername || "";
-    const imPassword = res.data.imPassword || "";
-    const imUuid = res.data.imUuid || "";
-    wx.setStorageSync("myUsername", imUsername);
-    wx.setStorageSync("myPassword", imPassword);
-    wx.setStorageSync("myUuid", imUuid);
-    const reshuandata = await WebIM.conn.open({
-      apiUrl: WebIM.config.apiURL,
-      user: __test_account__ || wx.getStorageSync("myUsername").toLowerCase(),
-      pwd: __test_psword__ || wx.getStorageSync("myPassword"),
-      grant_type: "password",
-      appKey: WebIM.config.appkey,
-    });
-
-    if (reshuandata && reshuandata.accessToken) {
-      wx.setStorageSync("huanXinToken", reshuandata.accessToken);
-      const CurrentUserRes = await getCurrentUser();
-      if (CurrentUserRes.code === 200 && CurrentUserRes.data) {
-        let avatarurl =
-          CurrentUserRes.data.avatar ||
-          "https://image.zhushuhebao.com/jnhgcloud-worker-applet/image/icon-avatar.png";
-        let phone = CurrentUserRes.data.phoneNumber;
-        let nickname = CurrentUserRes.data.userName;
-        let gender = CurrentUserRes.data.sex;
-        let birth = CurrentUserRes.data.idCard;
-        /**设置用户属性 */
-        let option = {
-          nickname,
-          avatarurl,
-          phone,
-          gender,
-          birth,
-        };
-        // 设置用户属性
-        WebIM.conn.updateUserInfo(option).then((res) => {
-          console.log("个人信息设置成功", res);
-        });
-      }
-      // WebIM.conn.context.accessToken = reshuandata.accessToken
-    }
-  }
-};
-
 /* 拨打电话 */
 const makePhone = async (userId) => {
   const { code, data, msg } = await getPhone(userId);
@@ -450,8 +395,6 @@ module.exports = {
   getWxScope,
   // getScope,
   distanceUnit,
-  loginHuanXin,
-  checkHuanXin,
   makePhone,
   date_ompatible_processing,
 };

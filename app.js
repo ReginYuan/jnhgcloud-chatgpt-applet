@@ -16,7 +16,7 @@ App({
     this.getSystemInfo();
 
     /* 获取用户位置信息 */
-    this.getUserLocation();
+    // this.getUserLocation();
 
     /* 登录 */
     if (!checkLogin()) {

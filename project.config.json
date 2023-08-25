@@ -45,15 +45,8 @@
     "miniprogram": {
       "list": [
         {
-          "name": "招工信息",
-          "pathName": "pages/jobs/jobs",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "工友圈",
-          "pathName": "pages/workers/workers",
+          "name": "首页",
+          "pathName": "pages/index/index",
           "query": "",
           "launchMode": "default",
           "scene": null
@@ -61,55 +54,6 @@
         {
           "name": "我的",
           "pathName": "pages/mine/mine",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "地图找活",
-          "pathName": "pages/jobs-by-map/jobs-by-map",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "招工详细（带参）",
-          "pathName": "pages/jobs-detail/jobs-detail",
-          "query": "recruitId=1657929303025881090",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "工人详情（带参）",
-          "pathName": "pages/workers-detail/workers-detail",
-          "query": "id=1649970029427445762",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "我的-招工管理",
-          "pathName": "pages/mine-jobs/mine-jobs",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "我的-好活收藏",
-          "pathName": "pages/mine-job-collect/mine-job-collect",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "我的-找活名片",
-          "pathName": "pages/mine-worker/mine-worker",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "我的-好工收藏",
-          "pathName": "pages/mine-worker-collect/mine-worker-collect",
           "query": "",
           "launchMode": "default",
           "scene": null
@@ -156,5 +100,5 @@
     ],
     "include": []
   },
-  "appid": "wxdb439496275fe46a"
+  "appid": "wx06f19714697025b0"
 }
