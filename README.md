@@ -1,6 +1,6 @@
-# jnhgcloud-worker-applet
+# jnhgcloud-gpt-applet
 
-数智工福小程序(劳务)
+jnhgcloud-chatgpt-applet 这是一个可以集成多端ai模型的小程序
 
 ## 分支
 
@@ -25,19 +25,8 @@
 
 ## 页面划分
 
-- 招工信息(主页): pages/jobs
-- 招工信息-详情: pages/jobs-detail
-- 工友圈: pages/workers/workers
-- 工友圈-详情: pages/workers-detail
-- 地图找活: pages/jobs-by-map
-- 我的: pages/mine/mine
-- 我的-招工管理：pages/mine-jobs
-- 我的-好活收藏：pages/mine-jobs-collect
-- 我的-找活名片：pages/mine-workers
-- 我的-招工收藏：pages/mine-workers-collect
-- 发布招工: pages/publish-find-job
-- 发布找活: pages/publish-recruit
-- webview 承接页: pages/webview
+- 首页(主页): pages/index/index
+
 
 ## 项目目录
 
