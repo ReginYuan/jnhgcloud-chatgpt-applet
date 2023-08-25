@@ -1,0 +1,63 @@
+<!--components/publishForm/form-uploader/form-uploader.wxml-->
+<view class="form-uploader">
+  <view class="label">
+    <text class="name">{{ label }}</text>
+    <text class="isrequired" wx:if="{{ require }}">*</text>
+  </view>
+  <view class="content">
+    <view class="show list-class">
+      <view class="preview img-class" wx:for="{{ value }}" wx:key="ossId">
+        <van-image
+          width="{{ width }}"
+          height="{{ height }}"
+          radius="5px"
+          fit="cover"
+          src="{{ item.url }}"
+          data-url="{{ item.url }}"
+          bind:click="handlerPreview"
+        />
+        <image
+          class="delete"
+          src="https://image.zhushuhebao.com/jnhgcloud-worker-applet/icon/icon-delete.png"
+          style="width: 16px; height: 16px"
+          mode="aspectFill"
+          data-index="{{ index }}"
+          bindtap="delete"
+        />
+      </view>
+      <van-uploader
+        wx:if="{{ value.length < count }}"
+        class="preview"
+        file-list="{{ value }}"
+        max-size="{{ size }}"
+        max-count="{{ count }}"
+        multiple="{{ multiple }}"
+        bind:after-read="afterRead"
+        bind:delete="delete"
+        preview-size="{{ width }}"
+        preview-image="{{ false }}"
+      >
+        <view
+          class="upload__icon__wrap"
+          style="width: {{ uploadIcon.width }}; height: {{ uploadIcon.height }}; background-color: {{ uploadIcon.bgc }}"
+        >
+          <view class="upload__loading" hidden="{{ !loading }}">
+            <van-loading />
+          </view>
+          <image
+            class="upload__icon"
+            hidden="{{ loading }}"
+            style="width: {{ uploadIcon.iconWidth }}; height: {{ uploadIcon.iconHeight }};"
+            mode="aspectFill"
+            src="{{ uploadIcon.icon }}"
+        /></view>
+      </van-uploader>
+    </view>
+    <view class="tips">
+      <text style="color: #b4b4b4">{{ tip }}</text>
+    </view>
+  </view>
+  <view class="warn">
+    <text>{{ warn }}</text>
+  </view>
+</view>

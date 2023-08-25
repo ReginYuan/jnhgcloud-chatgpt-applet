@@ -1,0 +1,30 @@
+<!-- 公用：详情页底部菜单 -->
+<view class="details-bottom-menu">
+  <view class="collect" bind:tap="handleTapCollect">
+    <image
+      src="{{ workerInfo.isCollect ? 'https://image.zhushuhebao.com/jnhgcloud-worker-applet/icon/star-yellow.png' : 'https://image.zhushuhebao.com/jnhgcloud-worker-applet/icon/star-grey.png' }}"
+      mode="aspectFill"
+      style="width: 48rpx; height: 48rpx; margin-bottom: 4rpx"
+    />
+    <text>{{ workerInfo.isCollect ? '已收藏' : '收藏'}}</text>
+  </view>
+  <view class="menu__button button__online" bind:tap="handleTapCommunicate">
+    <image
+      class="button__icon"
+      src="https://image.zhushuhebao.com/jnhgcloud-worker-applet/icon/icon-online-comm.png"
+      mode="aspectFill"
+    />
+    <text>在线沟通</text>
+  </view>
+  <view class="menu__button" bind:tap="handleTapPhone">
+    <image
+      class="button__icon"
+      src="https://image.zhushuhebao.com/jnhgcloud-worker-applet/image/icon-phone.png"
+      mode="aspectFill"
+    />
+    <text>免费联系</text>
+  </view>
+
+  <!-- 登录授权 -->
+  <my-van-popupp id="popup"></my-van-popupp>
+</view>

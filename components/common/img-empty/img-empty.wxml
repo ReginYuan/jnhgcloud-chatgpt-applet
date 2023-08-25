@@ -1,0 +1,6 @@
+<!--components/common/img-empty/img-empty.wxml-->
+<image
+  src="../../../assets/common/common-img-empty.jpg"
+  mode="aspectFill"
+  class="img__empty"
+/>

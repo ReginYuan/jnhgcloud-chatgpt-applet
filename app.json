@@ -1,0 +1,49 @@
+{
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "通用gpt",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "pages": [
+    "pages/index/index"
+  ],
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index"
+      },
+      {
+        "pagePath": "pages/mine/mine"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "requiredPrivateInfos": [
+    "getLocation"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "将根据您的位置为您智能匹配合适工作/工人"
+    },
+    "scope.writePhotosAlbum": {
+      "desc": "小程序需要授权您的相册"
+    },
+    "scope.camera": {
+      "desc": "小程序需要授权您的相机"
+    }
+  },
+  "plugins": {
+    "chooseLocation": {
+      "version": "1.0.10",
+      "provider": "wx76a9a06e5b4e693e"
+    }
+  },
+  "entryPagePath": "pages/index/index",
+  "lazyCodeLoading": "requiredComponents"
+}

@@ -1,0 +1,5 @@
+/* components/common/img-empty/img-empty.wxss */
+.img__empty {
+  width: 320rpx;
+  height: 320rpx;
+}

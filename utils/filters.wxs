@@ -1,0 +1,237 @@
+function formatTime(timeStamp) {
+  if (!timeStamp) return '---'
+  // eslint-disable-next-line no-undef
+  var date = getDate(timeStamp)
+  var year = date.getFullYear()
+  var month = date.getMonth() + 1
+  var day = date.getDate()
+  var hour = date.getHours()
+  var minute = date.getMinutes()
+  var second = date.getSeconds()
+  var str =
+    [year, month, day].map(formatNumber).join('-') +
+    ' ' +
+    [hour, minute, second].map(formatNumber).join(':')
+  return str
+}
+
+function formatNumber(n) {
+  if (!n) return
+  n = n.toString()
+  return n[1] ? n : 0 + n
+}
+
+/* 距离单位处理 */
+function distanceUnit(data) {
+  var res = null
+  var dic = data * 1 // 转数值 Number会报错
+  if (dic > 0 && dic < 1000) {
+    res = dic.toFixed(0) + 'm'
+  } else if (dic > 1000) {
+    res = (dic / 1000).toFixed(2) + 'km'
+  } else {
+    res = '0m'
+  }
+  return res
+}
+
+/* 日期时间处理 */
+// function formatDate(date, type) {
+//   if (!(date && type)) return '---'
+//   // eslint-disable-next-line no-undef
+//   var data = formatTime(getDate(date).getTime())
+//   var arr = data.split(' ')
+//   var arr1 = arr[0].split('-')
+//   var arr2 = arr[1].split(':')
+//   var year = arr1[0]
+//   var month = arr1[1]
+//   var day = arr1[2]
+//   var hour = arr2[0]
+//   var minute = arr2[1]
+//   var second = arr2[2]
+//   var res = year + '年' + month + '月' + day + '日'
+//   var res1 = res + [hour, minute].join(':')
+//   var res2 = res + [hour, minute, second].join(':')
+//   if (type === 1) {
+//     return res
+//   } else if (type === 2) {
+//     return res1
+//   } else if (type === 3) {
+//     return res2
+//   }
+// }
+
+function formatDate(date, type) {
+  if (!(date && type)) return '---'
+  var arr = date.split(' ')
+  if (arr[0]) {
+    var arr1 = arr[0].split('-')
+    var year = arr1[0]
+    var month = arr1[1]
+    var day = arr1[2]
+    if (arr[1]) {
+      var arr2 = arr[1].split(':')
+      var hour = arr2[0]
+      var minute = arr2[1]
+      var second = arr2[2]
+    }
+  }
+  var res = year + '年' + month + '月' + day + '日'
+  var res1 = res + [hour, minute].join(':')
+  var res2 = res + [hour, minute, second].join(':')
+  if (type === 1) {
+    return res
+  } else if (type === 2) {
+    return res1
+  } else if (type === 3) {
+    return res2
+  }
+}
+
+/* 记工工单列表今天日期 */
+function recordDate(data, type) {
+  if (!(data && type)) return '---'
+  // eslint-disable-next-line no-undef
+  var date = getDate(data)
+  var weeks = ['日', '一', '二', '三', '四', '五', '六']
+  var month = date.getMonth() + 1
+  var day = date.getDate()
+  var week = weeks[date.getDay()]
+  var res = month + '月' + day + '日'
+  var res1 = '周' + week
+  if (type === 1) {
+    return res
+  } else if (type === 2) {
+    return res1
+  }
+}
+
+/* 去0化 */
+function removeZero(data) {
+  if (data) {
+    return parseFloat(data)
+  } else {
+    return 0
+  }
+}
+
+/* 记工工单预计收入 */
+function recordIncome(data) {
+  var money = removeZero(data)
+  if (money < 10000) {
+    return removeZero(money.toFixed(2))
+  } else if (money < 100000000 && money >= 10000) {
+    return removeZero((money / 10000).toFixed(2)) + '万'
+  } else if (money >= 100000000 && money < 1000000000000) {
+    return removeZero((money / 100000000).toFixed(2)) + '亿'
+  } else if (money >= 1000000000000) {
+    return removeZero((money / 1000000000000).toFixed(2)) + '万亿'
+  }
+}
+
+/* 时间字符串转时间戳 */
+function dateToTimeStamp(date) {
+  if (!date) return 0
+  return Date.parse(date)
+}
+
+/* 时间年月 */
+function dateToYearMonth(date) {
+  // eslint-disable-next-line no-undef
+  var _date = getDate(date)
+  var year = _date.getFullYear()
+  var month = _date.getMonth() + 1
+  return year + '年' + month + '月'
+}
+
+/* 判断数组存在某个值 */
+function includes(arr, data) {
+  var index = arr.indexOf(data)
+  var flag
+  if (index >= 0) {
+    flag = true
+  } else {
+    flag = false
+  }
+  return flag
+}
+
+/* 记工项目类型 */
+function itemType(data) {
+  var arr = ['包工', '短包', '包量']
+  var index = data - 1
+  return arr[index]
+}
+
+/* 记工详情上班 */
+function recordWorkTime(time, standardTime) {
+  var num = removeZero(time)
+  if (standardTime) {
+    var num1 = removeZero(standardTime)
+  }
+  if (num === -1) {
+    return '一个工'
+  } else if (num === -0.5) {
+    return '半个工'
+  } else if (num === 0) {
+    return '休息'
+  } else if (num > 0) {
+    if (num1) {
+      return num + '小时' + '(' + removeZero((num / num1).toFixed(2)) + '个工)'
+    } else {
+      return num + '小时'
+    }
+  }
+}
+
+/* 加班 */
+function recordWorkOvertime(time) {
+  var num = removeZero(time)
+  if (!num) {
+    return '无加班'
+  } else {
+    return '加班' + num + '小时'
+  }
+}
+
+/* 记工详情每小时工资 */
+function recordWorkHourWages(wage, hour) {
+  var _wage = removeZero(wage)
+  var _hour = removeZero(hour)
+  return removeZero((_wage / _hour).toFixed(2))
+}
+
+/* 包工统计 */
+function recordWorkTime_statistics(time, standardTime) {
+  var num = removeZero(time)
+  if (standardTime) {
+    var num1 = removeZero(standardTime)
+  }
+  if (num === -1) {
+    return '一个工'
+  } else if (num === -0.5) {
+    return '半个工'
+  } else if (num === 0) {
+    return '休息'
+  } else if (num > 0) {
+    return num === num1 ? '一个工' : num
+  }
+}
+
+module.exports = {
+  formatTime: formatTime,
+  formatNumber: formatNumber,
+  distanceUnit: distanceUnit,
+  formatDate: formatDate,
+  recordDate: recordDate,
+  removeZero: removeZero,
+  recordIncome: recordIncome,
+  dateToTimeStamp: dateToTimeStamp,
+  dateToYearMonth: dateToYearMonth,
+  includes: includes,
+  itemType: itemType,
+  recordWorkTime: recordWorkTime,
+  recordWorkOvertime: recordWorkOvertime,
+  recordWorkHourWages: recordWorkHourWages,
+  recordWorkTime_statistics: recordWorkTime_statistics,
+}

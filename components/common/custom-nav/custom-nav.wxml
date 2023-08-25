@@ -1,0 +1,80 @@
+<!-- 自定义导航 -->
+<view
+  class="custom-nav"
+  style="z-index: {{ zIndex}}; padding-top: {{ statusBarHeight }}px; position: {{ position }}; background-color: {{ backgroundColor }};"
+>
+  <view class="nav">
+    <!-- 返回按钮 -->
+    <view class="left" wx:if="{{left}}">
+      <!-- <image
+        src="https://image.zhushuhebao.com/jnhgcloud-worker-applet/image/icon-button-left.png"
+    <view class="left" wx:if="{{ left }}">
+      <image
+        src="{{ backImgs[backImgType] }}"
+        mode="aspectFill"
+        class="back"
+        bind:tap="onTapBack"
+      /> -->
+      <van-icon
+        name="arrow-left"
+        class="back"
+        color="{{ iconColor }}"
+        bind:tap="onTapBack"
+      />
+    </view>
+    <!-- 自定义左侧按钮 -->
+    <view wx:else class="left back">
+      <slot name="left"></slot>
+    </view>
+    <!-- 搜索框 -->
+    <view
+      wx:if="{{ searchText }}"
+      class="search"
+      style=" width: {{ inputIsFocus ?  '306rpx' : 'inherit'}};"
+    >
+      <image
+        src="https://image.zhushuhebao.com/jnhgcloud-worker-applet/icon/common-icon-search.png"
+        mode="aspectFill"
+        class="search__icon"
+      />
+      <input
+        type="text"
+        class="search__input"
+        placeholder="{{ searchText }}"
+        value="{{ inputValue }}"
+        bind:input="onInput"
+        bind:focus="onFocusInput"
+      />
+      <image
+        hidden="{{ !inputIsFocus }}"
+        class="search__clear"
+        src="https://image.zhushuhebao.com/jnhgcloud-worker-applet/icon/icon-search-clear.png"
+        mode="aspectFill"
+        bind:tap="handleClearInput"
+      />
+      <view
+        hidden="{{ !inputIsFocus }}"
+        class="search__cancel"
+        bind:tap="onCancel"
+        >取消</view
+      >
+    </view>
+
+    <!-- 自定义标题 -->
+    <view
+      wx:if="{{ title }}"
+      class="title"
+      style="color: {{ color }}"
+      >{{ title || ''}}</view
+    >
+    <!-- 自定义标题slot -->
+    <view wx:else class="title" >
+      <slot name="title"></slot>
+    </view>
+  </view>
+</view>
+<view
+  class="custom-nav"
+  wx:if="{{ topMass && position!=='relative' }}"
+  style="padding-top: {{ statusBarHeight }}px;"
+></view>

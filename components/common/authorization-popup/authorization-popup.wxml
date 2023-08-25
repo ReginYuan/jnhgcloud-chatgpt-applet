@@ -1,0 +1,32 @@
+<!--components/common/authorization-popup/authorization-popup.wxml-->
+<view class="authorization">
+  <van-popup
+    show="{{ show }}"
+    custom-style="width: 640rpx;border-radius: 16rpx 16rpx 16rpx 16rpx;"
+  >
+    <view class="authorization-content">
+      <view class="title"> 欢迎使用数智工福小程序 </view>
+      <view class="text">
+        <view class="p1">
+          亲爱的用户
+          您好，您将要开始使用的数智工福应用是由慧谷数字科技开发、拥有、运营的建筑工人服务平台，我们承诺会采用先进的安全措施保护您的信息安全。
+        </view>
+        <view class="p2">
+          点击"同意并继续"，视为您已认真阅读并同意数智工福<text class="link"
+            bindtap="handlerOpen">《服务协议》</text
+          >、<text class="link" bindtap="handlerOpen1">《隐私政策》</text>及上述内容。
+        </view>
+      </view>
+    </view>
+    <view class="select">
+      <view class="select-option">
+        <button class="disagree" bindtap="handlerDisagree">不同意并退出</button>
+      </view>
+      <view class="select-option">
+        <button class="agree" bindtap="handlerAgree">同意并继续</button>
+      </view>
+    </view>
+  </van-popup>
+</view>
+<!-- 安装弹窗 -->
+<download-popup model:show="{{installShow}}"></download-popup>

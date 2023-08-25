@@ -1,0 +1,14 @@
+<!--components/publishForm/form-radio/form-radio.wxml-->
+<view class="form-radio">
+  <view class="content" bindtap="onChange">
+    <view class="radio" wx:if="{{value === defineNoChecked}}" style="width: {{size}};height: {{size}};"></view>
+    <view class="radio radio-checked" wx:elif="{{value === defineChecked}}" style="width: {{size}};height: {{size}};background-color: {{color}}; border-color: {{color}};"></view>
+    <view class="label">
+      <text class="name">{{label}}</text>
+      <text class="isrequired" wx:if="{{require}}">*</text>
+    </view>
+  </view>
+  <view class="warn" wx:if="{{warn}}">
+    <text>{{warn}}</text>
+  </view>
+</view>

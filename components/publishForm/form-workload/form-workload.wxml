@@ -1,0 +1,23 @@
+<!--components/publishForm/form-workload/form-workload.wxml-->
+<view class="form-workload">
+  <view class="label">
+    <view class="left">
+      <text class="name">{{label}}</text>
+      <text class="isrequired" wx:if="{{require}}">*</text>
+    </view>
+  </view>
+  <view class="content">
+    <view class="workload">
+      <input class="input" name="{{name}}" value="{{value.workload}}" type="digit" bindinput="onChange" placeholder="{{placeholder}}" placeholder-style="color:#B2BAC6;" bindblur="onBlur" />
+    </view>
+    <view class="slash">
+      <text decode="true">&nbsp;&nbsp;/&nbsp;&nbsp;</text>
+    </view>
+    <view class="unit">
+      <input class="input" name="{{name}}" value="{{value.unit}}" type="text" bindinput="onChange1" placeholder="{{placeholder1}}" placeholder-style="color:#B2BAC6;font-size:32rpx;" disabled="{{disabled}}" bindblur="onBlur1" />
+    </view>
+  </view>
+  <view class="warn">
+    <text>{{warn}}</text>
+  </view>
+</view>

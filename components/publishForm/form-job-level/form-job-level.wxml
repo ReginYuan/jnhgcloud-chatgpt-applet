@@ -1,0 +1,28 @@
+<!--components/publishForm/form-job-level/form-job-level.wxml-->
+<view class="form-job-level">
+  <view class="label">
+    <text class="name">{{label}}</text>
+    <text class="isrequired" wx:if="{{require}}">*</text>
+  </view>
+  <view class="content">
+    <view class="options" wx:for="{{jobType}}" wx:key="index">
+      <button
+        class="opt {{ (jobType.length - index) === value ? 'check-opt' : '' }}"
+        size="mini"
+        bindtap="handlerSelect"
+        data-item="{{item}}"
+      >
+        {{item.label}}
+      </button>
+      <image
+        class="img"
+        wx:if="{{ (jobType.length-index) === value }}"
+        src="https://image.zhushuhebao.com/jnhgcloud-worker-applet/icon/icon-check-blue.png"
+        mode="aspectFill"
+      />
+    </view>
+  </view>
+  <view class="warn">
+    <text>{{warn}}</text>
+  </view>
+</view>

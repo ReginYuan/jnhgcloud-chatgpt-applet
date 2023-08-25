@@ -1,0 +1,61 @@
+/* 底部固定导航栏 */
+.details-bottom-menu {
+  z-index: 9999;
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 22rpx 48rpx;
+  padding-bottom: calc(22rpx + constant(safe-area-inset-bottom));
+  padding-bottom: calc(22rpx + env(safe-area-inset-bottom));
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.details-bottom-menu .collect {
+  margin-right: 64rpx;
+  width: 72rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #999999;
+  font-size: 24rpx;
+}
+
+.details-bottom-menu .menu__button {
+  flex: 1;
+  width: 258rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 64rpx;
+  font-size: 32rpx;
+  color: #ffffff;
+  background-color: #3a71ff;
+}
+
+.button__icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.details-bottom-menu .menu__button image {
+  width: 48rpx;
+  height: 48rpx;
+  vertical-align: middle;
+  margin-right: 16rpx;
+}
+
+.details-bottom-menu .button__online {
+  margin-right: 32rpx;
+  background-color: #fff;
+  border-radius: 64rpx 64rpx 64rpx 64rpx;
+  border: 2rpx solid #ff9000;
+  color: #ff9000;
+}

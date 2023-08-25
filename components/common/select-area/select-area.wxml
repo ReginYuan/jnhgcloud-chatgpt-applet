@@ -1,0 +1,91 @@
+<!--pages/area/area.wxml-->
+<!-- 选择城市页 -->
+<view class="select__area {{isShow.show?'open':'back'}}">
+  <!-- 自定义nav -->
+  <custom-nav
+    title="选择城市"
+    position="absolute"
+    bind:back="onBack"
+  ></custom-nav>
+  <view
+    class="area__header"
+    style="margin-top: calc({{ statusBarHeight }}px + 88rpx);"
+  >
+    <view class="area__current">
+      所在城市：<text class="current__city" bind:tap="selectCurrentCity"
+        >{{ locationCityName }}</text
+      >
+    </view>
+    <view class="area__relocation">
+      <image
+        src="https://image.zhushuhebao.com/jnhgcloud-worker-applet/icon/area-icon-reloacion.png"
+        mode="aspectFill"
+        class="relocation__icon"
+      />
+      <view class="relocation__text" bind:tap="handleReLocation">重新定位</view>
+    </view>
+  </view>
+
+  <view
+    class="area__list__wrap"
+    style="height: calc(100vh - {{ statusBarHeight }}px -  {{ height }}rpx);height: calc(100vh - {{ statusBarHeight }}px - {{ height }}rpx);"
+  >
+    <view class="area__list">
+      <scroll-view class="list__province" scroll-y>
+        <view class="wrap" wx:for="{{ proviceList }}" wx:key="code">
+          <view
+            class="province {{ currentProvince === index ? 'selected' : ''}}"
+            bind:tap="handleSelectProvince"
+            data-index="{{ index }}"
+            >{{ item.simpleName }}</view
+          ></view
+        >
+      </scroll-view>
+      <scroll-view class="list__city" scroll-y>
+        <view class="wrap" wx:for="{{ cityList }}" wx:key="code">
+          <view
+            class="city {{ (item.selected || (item.code === selectCityCode) ) ? 'selected' : ''}}"
+            bind:tap="handleSelectCity"
+            data-index="{{ index }}"
+            >{{ item.simpleName }}</view
+          ></view
+        >
+      </scroll-view>
+    </view>
+    <!-- 已选区划 -->
+    <view class="area__selected" wx:if="{{ max > 1}}">
+      <view class="selected__header">
+        <view class="header__title">我选择的城市</view>
+        <view class="header__counts">{{ selectAreas.length }}/{{ max }}</view>
+      </view>
+      <view class="selected__labels__list">
+        <view
+          class="selected__label"
+          wx:for="{{ selectAreas }}"
+          wx:key="jobTypeLabelId"
+          bind:tap="onRemoveCity"
+          data-city="{{ item }}"
+        >
+          <text>{{ item.simpleName || item.city }}</text>
+          <image
+            class="selected__label__del"
+            src="https://image.zhushuhebao.com/jnhgcloud-worker-applet/icon/work-icon-del.png"
+            mode="aspectFill"
+          />
+        </view>
+      </view>
+      <view class="selected__handle">
+        <button class="handle__clear" bind:tap="handleClear">清空</button>
+        <button class="handle__save" bind:tap="handleSave">保存</button>
+      </view></view
+    >
+  </view>
+</view>
+
+<!-- 弹窗提示 -->
+<alert-popup
+  popupData="{{ popupData }}"
+  isShow="{{ isHintLocation }}"
+  bind:cancel="onCloseLocation"
+  bind:confirm="onConfirmLocaion"
+></alert-popup>

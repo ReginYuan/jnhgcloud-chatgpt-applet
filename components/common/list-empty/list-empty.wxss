@@ -1,0 +1,11 @@
+.list__empty {
+  padding-top: 200rpx;
+  margin: 0 auto;
+  width: 480rpx;
+  height: 372rpx;
+}
+
+.list__empty__img {
+  width: 100%;
+  height: 100%;
+}

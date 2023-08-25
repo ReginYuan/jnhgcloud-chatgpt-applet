@@ -1,0 +1,40 @@
+<!--components/publishForm/form-input/form-input.wxml-->
+<view class="form-input">
+  <view class="label">
+    <text class="name">{{label}}</text>
+    <text class="isrequired" wx:if="{{require}}">*</text>
+  </view>
+  <view class="content" bindtap="onTap">
+    <textarea
+      wx:if="{{multiline}}"
+      class="textarea"
+      value="{{value}}"
+      maxlength="{{-1}}"
+      auto-height="{{true}}"
+      bindinput="onChange"
+      placeholder="{{placeholder}}"
+      placeholder-style="color:#999;"
+      disabled="{{disabled}}"
+      bindblur="onBlur"
+    />
+    <input
+      wx:else
+      class="input"
+      value="{{value}}"
+      type="{{type}}"
+      always-embed="{{true}}"
+      adjust-position="{{adjust_position}}"
+      bindinput="onChange"
+      placeholder="{{placeholder}}"
+      placeholder-style="color:#999;"
+      disabled="{{disabled}}"
+      bindblur="onBlur"
+    />
+    <slot wx:if="false"></slot>
+    <slot class="left" name="left"></slot>
+    <slot class="right" name="right"></slot>
+  </view>
+  <view class="warn">
+    <text>{{warn}}</text>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+/* components/publishForm/form-team/form-team.wxss */
+.form-team {
+  width: 100%;
+}
+.label {
+  font-family: 'PingFang SC-Regular';
+  font-size: 32rpx;
+  /* color: #222222; */
+  color: #666;
+  line-height: 44rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.isrequired {
+  color: #f94b30;
+}
+
+.right{
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  height: 28rpx;
+  border-bottom: 2rpx solid #EDEDED;
+}
+.content .input{
+  flex: 1 1 auto;
+}
+
+.warn {
+  color: #f94b30;
+  font-size: 24rpx;
+  height: 28rpx;
+}

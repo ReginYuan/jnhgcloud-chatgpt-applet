@@ -1,0 +1,22 @@
+<!--components/publishForm/tip-popup/tip-popup.wxml-->
+<view class="tip">
+  <van-popup
+    show="{{ show }}"
+    custom-style="width: 640rpx;border-radius: 16rpx 16rpx 16rpx 16rpx;"
+  >
+    <view class="tip-content">
+      <view class="title"> 温馨提示 </view>
+      <view class="text">
+        {{content}}
+      </view>
+    </view>
+    <view class="select">
+      <view class="select-option">
+        <button class="cancle" bindtap="handlerCancle">{{cancle}}</button>
+      </view>
+      <view class="select-option">
+        <button class="agree" bindtap="handlerAgree">{{agree}}</button>
+      </view>
+    </view>
+  </van-popup>
+</view>

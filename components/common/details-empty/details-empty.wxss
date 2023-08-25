@@ -1,0 +1,20 @@
+/* components/common/details-empty/details-empty.wxss */
+.details__empty {
+  padding-top: 112rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.details__empty_img {
+  margin-bottom: 16rpx;
+  width: 124rpx;
+  height: 124rpx;
+}
+
+.details__empty__text {
+  font-size: 24rpx;
+  font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+  font-weight: 400;
+  color: #999999;
+}

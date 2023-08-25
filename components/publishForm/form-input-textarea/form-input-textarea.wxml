@@ -1,0 +1,16 @@
+<!--components/publishForm/form-input-textarea/form-input-textarea.wxml-->
+<view class="form-input-textarea">
+  <view class="label">
+    <text class="name">{{label}}</text>
+    <text class="isrequired" wx:if="{{require}}">*</text>
+  </view>
+  <view class="content">
+    <textarea class="textarea" name="{{name}}" value="{{value}}" :type="{{type}}" bindinput="onChange" placeholder="{{placeholder}}" placeholder-class="placeholder" auto-height="{{autoHeight}}" maxlength="{{maxlength}}" disabled="{{disabled}}" bindblur="onBlur" />
+    <view class="count">
+      <text wx:if="{{maxlength>0}}">{{value.length}}/{{maxlength}}</text>
+    </view>
+  </view>
+  <view class="warn">
+    <text>{{warn}}</text>
+  </view>
+</view>
