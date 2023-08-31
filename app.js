@@ -1,11 +1,5 @@
 // app.js
-import {
-  checkLogin,
-  getUserLocation,
-  getLogin,
-  loginHuanXin,
-  checkHuanXin,
-} from "./utils/util";
+import { checkLogin, getUserLocation, getLogin } from "./utils/util";
 
 App({
   async onLaunch() {
@@ -21,10 +15,6 @@ App({
     /* 登录 */
     if (!checkLogin()) {
       await getLogin();
-    }
-
-    if (checkLogin() && !checkHuanXin()) {
-      await loginHuanXin();
     }
 
     /* 调用 API 从本地缓存中获取数据 */

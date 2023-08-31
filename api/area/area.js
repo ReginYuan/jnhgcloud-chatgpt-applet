@@ -1,5 +1,5 @@
-import wxRequest from '../../utils/request'
+import wxRequest from "../../utils/request";
 
 export const getAreasList = () => {
-  return wxRequest.get('/api/system/region/getAll')
-}
+  return wxRequest.get("/api/system/region/getAll");
+};

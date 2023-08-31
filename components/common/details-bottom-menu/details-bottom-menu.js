@@ -1,13 +1,7 @@
 // components/common/details-bottom-menu/details-bottom-menu.js
 
-import {
-  checkLogin,
-  debounceAhead,
-  makePhone,
-  checkHuanXin,
-  loginHuanXin,
-} from '../../../utils/util'
-import { collectWorker, collectJob } from '../../../api/common/common'
+import { checkLogin, debounceAhead, makePhone } from "../../../utils/util";
+import { collectWorker, collectJob } from "../../../api/common/common";
 
 Component({
   /**
@@ -17,12 +11,12 @@ Component({
     workerInfo: {
       type: Object,
       value: () => {
-        return {}
+        return {};
       },
     },
     type: {
       type: String,
-      value: 'job',
+      value: "job",
     },
   },
 
@@ -38,73 +32,66 @@ Component({
     /* 登录授权提示 */
     isLogin() {
       if (!checkLogin()) {
-        this.selectComponent('#popup').show()
-        return
+        this.selectComponent("#popup").show();
+        return;
       }
-      return true
+      return true;
     },
     /* 收藏 */
     handleTapCollect: debounceAhead(async function () {
-      if (!this.isLogin()) return
+      if (!this.isLogin()) return;
       try {
-        if ('job' === this.data.type) {
-          const res = await collectJob(this.data.workerInfo.recruitId) // 收藏工作
+        if ("job" === this.data.type) {
+          const res = await collectJob(this.data.workerInfo.recruitId); // 收藏工作
           if (res.code === 200) {
             this.setData({
-              'workerInfo.isCollect': res.data,
-            })
+              "workerInfo.isCollect": res.data,
+            });
           } else {
-            throw res.msg
+            throw res.msg;
           }
-        } else if ('worker' === this.data.type) {
-          const res = await collectWorker(this.data.workerInfo.workerCardId) // 收藏工人
+        } else if ("worker" === this.data.type) {
+          const res = await collectWorker(this.data.workerInfo.workerCardId); // 收藏工人
           if (res.code === 200) {
             this.setData({
-              'workerInfo.isCollect': res.data,
-            })
+              "workerInfo.isCollect": res.data,
+            });
           } else {
-            throw res.msg
+            throw res.msg;
           }
         }
       } catch (error) {
         wx.showToast({
           title: error,
-        })
+        });
       }
     }),
     /*在线沟通*/
     async handleTapCommunicate() {
       if (!checkLogin()) {
         try {
-          this.isLogin()
+          this.isLogin();
         } catch (error) {
-          console.log('error', error)
+          console.log("error", error);
         }
-        return
+        return;
       }
-      if (!checkHuanXin()) {
-        try {
-          await loginHuanXin()
-        } catch (error) {
-          console.log('error', error)
-        }
-      }
-      let { createBy, createName } = this.data.workerInfo
-      let my = wx.getStorageSync('myUsername')
-      let yourname = 'labor' + createBy
+      let { createBy, createName } = this.data.workerInfo;
+      let my = wx.getStorageSync("myUsername");
+      let yourname = "labor" + createBy;
       var nameList = {
         myName: my,
         your: yourname,
         yourName: createName,
-      }
+      };
       wx.navigateTo({
-        url: '../chatroom/chatroom?username=' + JSON.stringify(nameList),
-      })
+        url: "../chatroom/chatroom?username=" + JSON.stringify(nameList),
+      });
     },
     /* 免费联系 */
     handleTapPhone: debounceAhead(async function () {
-      if (!this.isLogin()) return
-      await makePhone(this.data.workerInfo.createBy)
+      if (!this.isLogin()) return;
+      await makePhone(this.data.workerInfo.createBy);
     }),
   },
-})
+});
